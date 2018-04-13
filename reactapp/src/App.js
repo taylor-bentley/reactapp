@@ -1,68 +1,72 @@
 import React, { Component } from 'react';
-import './App.css';
+import './index.css';
+import Scrollspy from 'react-scrollspy';
+import {Quote} from './Quote.js';
+import Time from './time.js';
+import quirrell from './quirrell.jpeg';
+import List from './toDoList.js';
 import ListItem from './ListItem.js';
+
 
 class App extends Component {
   constructor(props){
-    super(props);
+    super(props)
     this.state = {
-      value: "",
-      toDoList:[]
-    };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClear = this.handleClear.bind(this);
-}
-
-  handleChange = (event) => {
-    this.setState({value: event.target.value});
+    }
   }
 
-  handleClear = (event) => {
-    this.setState({value:""});
-  }
+  render(){
+    return(
+      <div className="body">
 
-  handleSubmit = (event) => {
-    const tempArr = this.state.toDoList;
-    event.preventDefault();
-    tempArr.push(this.state.value);
-    this.setState({toDoList: tempArr,
-      value: ''});
-    this.se
-  }
+        <div className="navigation">
+          <a className="myName" href="https://www.google.com/" target="_blank"><h2>Welcome to the best dashboard ever</h2></a>
+          <Scrollspy className = 'linksContainer' items={['About Me', 'Portfolio', 'Inspirational']} currentClassName='scrolled'>
+            <div><a className = 'nav-link' href = '#'>Blog</a></div>
+            <div><a className = 'nav-link' href = '#'>My Faves</a></div>
+            <div><a className = 'nav-link' href = '#'>FUD Stuff</a></div>
+          </Scrollspy>
+        </div>
 
-  renderListItem = () => {
-    const temp = this.state.toDoList
-    return temp.map((item, index) => {
-      return <ListItem
-        text={item}
-        key={index}/>
-    })
-  }
+        <div className="header">
+          <div className="container">
+            <div className="row">
 
-  //handleDelete = () => {
+              <div className="col-md-4 headerItem">
+                <Quote/>
+              </div>
 
-  //}
+              <div className="col-md-4 headerItem" id="iGreetYou">
+                <h1>Hey Friend!</h1>
+                <p><Time/></p>
+                <img className="quirrell" src={quirrell}/>
+              </div>
 
+              <div className="col-md-4 headerItem" id="makeMeDoThings">
+                <h2>Add It To The List:</h2>
+                <List/>
+              </div>
 
-render() {
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
-            <input type="text" value= {this.state.value} onChange={this.handleChange}/>
-            <button onClick ={this.handleClear}>Clear</button>
-            <button onClick ={this.handleSubmit}>Submit</button>
-          </label>
-        </form>
-        {this.renderListItem()}
+            </div>
+          </div>
+        </div>
+
+        <div className="navigation">
+          <a className="myName" href="https://www.google.com/" target="_blank"><h2>Welcome</h2></a>
+          <Scrollspy className = 'linksContainer' items={['About Me', 'Portfolio', 'Inspirational']} currentClassName='scrolled'>
+            <div><a className = 'nav-link' href = '#'>Blog</a></div>
+            <div><a className = 'nav-link' href = '#'>My Faves</a></div>
+            <div><a className = 'nav-link' href = '#'>FUD Stuff</a></div>
+          </Scrollspy>
+        </div>
+
+        <div className="main">
+        </div>
 
       </div>
-
-    );
-  };
+    )
+  }
 }
 
 export default App;
