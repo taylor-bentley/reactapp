@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
 
-/*images*/
-import Flower from './flower.jpg';
-
 /*for navbar*/
 import Scrollspy from 'react-scrollspy';
 
@@ -11,8 +8,6 @@ import Scrollspy from 'react-scrollspy';
 import {Quote} from './Quote.js';
 import Time from './time.js';
 import List from './toDoList.js';
-import ListItem from './ListItem.js';
-
 
 class App extends Component {
   constructor(props){
