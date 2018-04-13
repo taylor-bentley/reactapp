@@ -4,7 +4,6 @@ padding: 0;
 font-family: sans-serif;
 background-image: url('./flower.jpg');
 background-size: cover;
-height: 750px;
 color: white;
 }
 
@@ -43,7 +42,7 @@ padding-top: 5px;
 }
 
 .header {
-height: 650px;
+height: 750px;
 }
 
 .headerItem {
@@ -53,7 +52,7 @@ text-align: center;
 }
 
 .quoteDetails {
-font-size: 25px;
+font-size: 20px;
 padding-top: 27px;
 }
 
@@ -66,6 +65,16 @@ padding-top: 27px;
   color: black;
 }
 
+.lilHeaders {
+  font-size: 20px;
+}
+
 .list{
   color: white;
+  padding-top: 27px;
+}
+
+.listTitle{
+  color: white;
+  font-size: 20px;
 }
