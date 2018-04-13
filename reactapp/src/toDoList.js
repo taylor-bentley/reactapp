@@ -52,7 +52,6 @@ render() {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Add it to the list:
             <input type="text" value= {this.state.value} onChange={this.handleChange}/>
             <button onClick ={this.handleSubmit}>Submit</button>
             <button onClick ={this.handleClear}>Clear</button>

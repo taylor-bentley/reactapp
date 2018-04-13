@@ -7,7 +7,7 @@ class ListItem extends Component {
   render() {
     return (
       <div>
-      <p>{this.props.text}</p>
+      <p className="renderedListItem">{this.props.text}</p>
       </div>
     )
   }
